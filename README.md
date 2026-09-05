@@ -1,6 +1,6 @@
 # Wirecat
 
-![app_icon.png](app/src/main/res/app_icon.png)
+<img alt="app_icon.png" height="627" src="app/src/main/res/app_icon.png" width="627"/>
 
 **Local, per-app data usage monitor and network firewall for Android.**
 
