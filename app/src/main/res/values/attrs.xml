@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="wcColorBackground" format="color" />
+    <attr name="wcColorSurface" format="color" />
+    <attr name="wcColorSurfaceRaised" format="color" />
+    <attr name="wcColorStroke" format="color" />
+    <attr name="wcColorTextPrimary" format="color" />
+    <attr name="wcColorTextSecondary" format="color" />
+</resources>

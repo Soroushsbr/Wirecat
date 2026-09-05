@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core surface scale -->
+    <color name="wc_background">#0B0F17</color>
+    <color name="wc_surface">#141A26</color>
+    <color name="wc_surface_raised">#1C2433</color>
+    <color name="wc_surface_stroke">#262F42</color>
+
+    <!-- Brand -->
+    <color name="wc_accent">#5B8CFF</color>
+    <color name="wc_accent_soft">#22335F</color>
+    <color name="wc_accent_gradient_start">#5B8CFF</color>
+    <color name="wc_accent_gradient_end">#8B5CF6</color>
+
+    <!-- Per-tab identity accents (used for the header icon chip + nav pill on each tab) -->
+    <color name="wc_tab_home">#5B8CFF</color>
+    <color name="wc_tab_logs">#22C3A6</color>
+    <color name="wc_tab_tunnel">#F5A623</color>
+    <color name="wc_tab_settings">#B26CFF</color>
+
+    <!-- Status -->
+    <color name="wc_success">#2ED9A3</color>
+    <color name="wc_success_soft">#123328</color>
+    <color name="wc_warning">#F5A623</color>
+    <color name="wc_warning_soft">#3A2B12</color>
+    <color name="wc_danger">#FF6B6B</color>
+    <color name="wc_danger_soft">#3A1E22</color>
+
+    <!-- Text -->
+    <color name="wc_text_primary">#F6F8FC</color>
+    <color name="wc_text_secondary">#93A0B8</color>
+    <color name="wc_text_disabled">#57617A</color>
+
+    <!-- App usage color coding (for icon chips / bars) -->
+    <color name="wc_chip_1">#5B8CFF</color>
+    <color name="wc_chip_2">#2ED9A3</color>
+    <color name="wc_chip_3">#F5A623</color>
+    <color name="wc_chip_4">#FF6B6B</color>
+    <color name="wc_chip_5">#B26CFF</color>
+
+    <color name="wc_white">#FFFFFF</color>
+    <color name="wc_black">#000000</color>
+    <color name="wc_transparent">#00000000</color>
+
+    <!-- Light theme variant -->
+    <color name="wc_light_background">#F3F5FA</color>
+    <color name="wc_light_surface">#FFFFFF</color>
+    <color name="wc_light_surface_raised">#FFFFFF</color>
+    <color name="wc_light_stroke">#E4E8F1</color>
+    <color name="wc_light_text_primary">#10131C</color>
+    <color name="wc_light_text_secondary">#5B6478</color>
+</resources>

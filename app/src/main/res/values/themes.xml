@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Wirecat" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/wc_accent</item>
+        <item name="colorPrimaryDark">@color/wc_background</item>
+        <item name="colorAccent">@color/wc_accent</item>
+        <item name="android:statusBarColor">@color/wc_background</item>
+        <item name="android:navigationBarColor">@color/wc_background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="android:windowBackground">@color/wc_background</item>
+        <item name="colorSurface">@color/wc_surface</item>
+        <item name="android:textColorPrimary">@color/wc_text_primary</item>
+        <item name="android:textColorSecondary">@color/wc_text_secondary</item>
+        <item name="android:fontFamily">sans-serif</item>
+
+        <item name="wcColorBackground">@color/wc_background</item>
+        <item name="wcColorSurface">@color/wc_surface</item>
+        <item name="wcColorSurfaceRaised">@color/wc_surface_raised</item>
+        <item name="wcColorStroke">@color/wc_surface_stroke</item>
+        <item name="wcColorTextPrimary">@color/wc_text_primary</item>
+        <item name="wcColorTextSecondary">@color/wc_text_secondary</item>
+    </style>
+
+    <style name="Theme.Wirecat.Light" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/wc_accent</item>
+        <item name="colorPrimaryDark">@color/wc_light_background</item>
+        <item name="colorAccent">@color/wc_accent</item>
+        <item name="android:statusBarColor">@color/wc_light_background</item>
+        <item name="android:navigationBarColor">@color/wc_light_background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:windowBackground">@color/wc_light_background</item>
+        <item name="colorSurface">@color/wc_light_surface</item>
+        <item name="android:textColorPrimary">@color/wc_light_text_primary</item>
+        <item name="android:textColorSecondary">@color/wc_light_text_secondary</item>
+        <item name="android:fontFamily">sans-serif</item>
+
+        <item name="wcColorBackground">@color/wc_light_background</item>
+        <item name="wcColorSurface">@color/wc_light_surface</item>
+        <item name="wcColorSurfaceRaised">@color/wc_light_surface_raised</item>
+        <item name="wcColorStroke">@color/wc_light_stroke</item>
+        <item name="wcColorTextPrimary">@color/wc_light_text_primary</item>
+        <item name="wcColorTextSecondary">@color/wc_light_text_secondary</item>
+    </style>
+</resources>

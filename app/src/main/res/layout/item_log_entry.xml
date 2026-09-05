@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card_stroke"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:id="@+id/logHeaderRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/textLogType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_pill_muted"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            android:textColor="@color/wc_accent"
+            android:text="TCP" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textLogDirection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/wcColorTextPrimary"
+                android:textSize="13sp"
+                android:maxLines="1"
+                android:ellipsize="middle"
+                android:text="Blocked" />
+
+            <TextView
+                android:id="@+id/textLogRoute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="?attr/wcColorTextSecondary"
+                android:textSize="11sp"
+                android:maxLines="1"
+                android:ellipsize="middle"
+                android:fontFamily="monospace"
+                android:text="10.10.10.2:0 \u2192 0.0.0.0:0" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textLogTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:textColor="?attr/wcColorTextSecondary"
+            android:textSize="12sp"
+            android:text="00:00:00" />
+
+        <ImageView
+            android:id="@+id/imgLogChevron"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="?attr/wcColorTextSecondary"
+            android:rotation="90"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/logDetailsSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingHorizontal="12dp"
+        android:paddingBottom="12dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="?attr/wcColorStroke" />
+
+        <TextView
+            android:id="@+id/textLogSource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textColor="?attr/wcColorTextPrimary"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:text="Source: 10.10.10.2:0" />
+
+        <TextView
+            android:id="@+id/textLogDest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textColor="?attr/wcColorTextPrimary"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:text="Destination: 0.0.0.0:0" />
+
+        <TextView
+            android:id="@+id/textLogProtocol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textColor="?attr/wcColorTextPrimary"
+            android:textSize="12sp"
+            android:text="Protocol: TCP" />
+
+        <TextView
+            android:id="@+id/textLogIpVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textColor="?attr/wcColorTextPrimary"
+            android:textSize="12sp"
+            android:text="IP version: IPv4" />
+
+        <TextView
+            android:id="@+id/textLogDirectionDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textColor="?attr/wcColorTextPrimary"
+            android:textSize="12sp"
+            android:text="Direction: Sent (device \u2192 destination)" />
+
+        <TextView
+            android:id="@+id/textLogSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textColor="?attr/wcColorTextPrimary"
+            android:textSize="12sp"
+            android:text="Size: 0 bytes" />
+
+        <TextView
+            android:id="@+id/textLogApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textColor="?attr/wcColorTextPrimary"
+            android:textSize="12sp"
+            android:text="App: Unknown" />
+
+        <TextView
+            android:id="@+id/textLogFullTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/wcColorTextPrimary"
+            android:textSize="12sp"
+            android:text="Time: 00:00:00" />
+
+    </LinearLayout>
+
+</LinearLayout>

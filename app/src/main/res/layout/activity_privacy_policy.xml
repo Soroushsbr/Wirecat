@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/wcColorBackground"
+    android:paddingHorizontal="16dp">
+
+    <include android:id="@+id/toolbarBack" layout="@layout/toolbar_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_stroke"
+            android:layout_marginTop="8dp"
+            android:padding="18dp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="?attr/wcColorTextPrimary"
+            android:textSize="14sp"
+            android:text="@string/privacy_policy_body" />
+    </ScrollView>
+
+</LinearLayout>

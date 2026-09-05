@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wirecat</string>
+
+    <string name="start_monitoring">Start</string>
+    <string name="stop_monitoring">Stop</string>
+    <string name="total_usage">Total usage</string>
+    <string name="session_time">Session time</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_logs">Logs</string>
+    <string name="nav_tunnel">Tunnel</string>
+    <string name="nav_settings">Settings</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_privacy_policy">Privacy policy</string>
+    <string name="settings_donate">Support the developer</string>
+    <string name="settings_history">History</string>
+    <string name="settings_capture_packets">Capture packets while monitoring</string>
+    <string name="settings_capture_packets_desc">Records detailed network traffic - both sent and received, for every app - instead of only usage totals. Requires the VPN permission and may reduce connection speed while active, so it\'s off by default. Turn this on before pressing Start on the Home screen.</string>
+    <string name="capture_notification_text">Packet capture running</string>
+    <string name="capture_conflict_tunnel">Tunnel is blocking apps right now. Turn Tunnel off first - Android only allows one VPN connection at a time.</string>
+    <string name="tunnel_conflict_capture">Packet capture is running on the Home screen right now. Stop monitoring first - Android only allows one VPN connection at a time.</string>
+    <string name="splash_loading">Loading\u2026</string>
+    <string name="version_format">v%1$s</string>
+
+    <string name="log_title">Log</string>
+    <string name="log_empty">No packets yet. Turn on Tunnel (with Capture packets on in Settings) to see blocked traffic here.</string>
+    <string name="log_no_matches">No packets match your search.</string>
+    <string name="log_search_hint">Search by app, protocol, or address</string>
+
+    <string name="tunnel_title">Tunnel</string>
+    <string name="tunnel_subtitle">Block internet access for selected apps</string>
+    <string name="tunnel_start">Start tunnel</string>
+    <string name="tunnel_stop">Stop tunnel</string>
+    <string name="tunnel_vpn_notice">Tunnel uses Android\'s local VPN interface to block the apps you pick. Only one VPN can be active on Android at a time, so while Tunnel is on, other VPN apps will be paused. Turn Tunnel off to use another VPN app.</string>
+    <string name="tunnel_search_hint">Search apps</string>
+
+    <string name="permission_usage_access_title">Usage access needed</string>
+    <string name="permission_usage_access_body">Wirecat needs Usage Access permission to read how much data each app uses. Please enable it for Wirecat on the next screen.</string>
+    <string name="permission_notifications_title">Notifications</string>
+    <string name="permission_notifications_body">Wirecat shows a persistent notification while monitoring is running, as required by Android.</string>
+    <string name="grant_permission">Grant permission</string>
+    <string name="not_now">Not now</string>
+    <string name="no_network_message">Connect to Wi-Fi or mobile data before starting monitoring.</string>
+
+    <string name="donate_url">https://sibmo.ir/soroushsbr</string>
+
+    <string name="history_title">History</string>
+    <string name="history_empty">No saved sessions yet.</string>
+    <string name="history_delete_one">Delete session</string>
+    <string name="history_delete_one_confirm">Delete this saved session and its logs? This can\'t be undone.</string>
+    <string name="history_delete_all">Delete all history</string>
+    <string name="history_delete_all_confirm">Delete every saved session and its logs? This can\'t be undone.</string>
+    <string name="history_delete_confirm_yes">Delete</string>
+    <string name="history_tab_data">Data usage</string>
+    <string name="history_tab_logs">Logs</string>
+    <string name="history_no_packets_monitor">No packet-level logs for this session - Monitoring tracks data usage, not individual packets. Use Tunnel with Capture packets on to record packet logs.</string>
+    <string name="history_no_packets_tunnel">No packets were logged for this session - Capture packets was off in Settings while it ran.</string>
+
+    <string name="privacy_policy_title">Privacy policy</string>
+    <string name="privacy_policy_body">Wirecat runs entirely on your device.\n\nData usage monitoring: app-by-app data usage is read from Android\'s built-in usage-access APIs and is never uploaded anywhere.\n\nTunnel and packet capture: when you turn on Tunnel or enable \"Capture packets while monitoring,\" Wirecat creates a local VPN interface purely to see and, for Tunnel, block traffic on your own device - no traffic is ever routed through an external server, and packet contents themselves are not read or stored, only metadata such as protocol, size, timestamp, and which app it came from.\n\nStorage: session history and packet logs are saved in a local database inside the app\'s private storage on your device. Nothing is synced or backed up to any server, and you can delete any or all of it at any time from the History screen.\n\nDonations: the donate link opens an external page in your browser; Wirecat has no part in and does not see any information you provide there.\n\nOutside of the donation link you choose to open, Wirecat makes no other network connections and does not collect, transmit, or sell your personal data.</string>
+</resources>
