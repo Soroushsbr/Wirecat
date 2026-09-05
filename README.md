@@ -1,5 +1,7 @@
 # Wirecat
 
+![app_icon.png](app/src/main/res/app_icon.png)
+
 **Local, per-app data usage monitor and network firewall for Android.**
 
 Wirecat shows you exactly which apps are using your data in real time, lets you cut off any app's internet access on demand, and keeps a local log of what's actually happening on the wire, all of it running entirely on-device.
@@ -81,11 +83,3 @@ This project intentionally does **not** ship a Gradle wrapper — it's built aga
 - **Tunnel vs. other VPNs:** can't run alongside a separate VPN app (Android OS restriction — see above).
 - **IPv6 relay:** live packet *capture* during monitoring currently only relays IPv4 traffic; IPv6 packets are neither forwarded nor logged by the capture service (Tunnel's blocking + logging, by contrast, fully supports IPv6).
 - **No cloud sync:** history and logs are local-only by design — reinstalling the app or clearing its data erases them.
-
-## Privacy
-
-See [`PRIVACY.md`](PRIVACY.md) / the in-app Privacy Policy screen for the full text. Short version: nothing leaves your device except whatever you choose to open via the donation link.
-
-## License
-
-_Add your chosen license here (e.g. MIT, Apache-2.0, or "All rights reserved" if proprietary)._
