@@ -1,5 +1,6 @@
 package com.soroush.wirecat.ui
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.soroush.wirecat.R
 import com.soroush.wirecat.databinding.FragmentSettingsBinding
+import com.soroush.wirecat.util.LocaleUtils
 import com.soroush.wirecat.util.PrefsManager
 
 class SettingsFragment : Fragment() {
@@ -44,6 +46,9 @@ class SettingsFragment : Fragment() {
             prefs.isMonitorCaptureEnabled = isChecked
         }
 
+        updateLanguageLabel()
+        binding.rowLanguage.setOnClickListener { showLanguagePicker() }
+
         binding.rowHistory.setOnClickListener {
             startActivity(Intent(requireContext(), HistoryActivity::class.java))
         }
@@ -58,5 +63,24 @@ class SettingsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun updateLanguageLabel() {
+        val isPersian = LocaleUtils.currentLanguageTag(requireContext()) == LocaleUtils.LANGUAGE_PERSIAN
+        binding.textCurrentLanguage.text = getString(if (isPersian) R.string.language_persian else R.string.language_english)
+    }
+
+    private fun showLanguagePicker() {
+        val options = arrayOf(getString(R.string.language_english), getString(R.string.language_persian))
+        val currentIndex = if (LocaleUtils.currentLanguageTag(requireContext()) == LocaleUtils.LANGUAGE_PERSIAN) 1 else 0
+        AlertDialog.Builder(requireContext())
+            .setTitle(R.string.settings_language)
+            .setSingleChoiceItems(options, currentIndex) { dialog, which ->
+                dialog.dismiss()
+                val tag = if (which == 1) LocaleUtils.LANGUAGE_PERSIAN else LocaleUtils.LANGUAGE_ENGLISH
+                LocaleUtils.setLanguage(tag)
+            }
+            .setNegativeButton(R.string.not_now, null)
+            .show()
     }
 }

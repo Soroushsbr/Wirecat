@@ -79,11 +79,11 @@ class HistoryDetailActivity : BaseActivity() {
 
             val duration = sessionWithApps.session.endTimeMillis - sessionWithApps.session.startTimeMillis
             val totalLabel = if (sessionType == SessionType.TUNNEL) {
-                "${sessionWithApps.session.totalBytes} packets blocked"
+                getString(R.string.history_packets_blocked, sessionWithApps.session.totalBytes)
             } else {
-                "Total: ${FormatUtils.formatBytes(sessionWithApps.session.totalBytes)}"
+                getString(R.string.history_total_bytes, FormatUtils.formatBytes(sessionWithApps.session.totalBytes))
             }
-            binding.textDetailSummary.text = "$totalLabel \u2022 Duration: ${FormatUtils.formatDuration(duration)}"
+            binding.textDetailSummary.text = getString(R.string.history_summary_detail, totalLabel, FormatUtils.formatDuration(duration))
 
             val perApp = sessionWithApps.apps
                 .sortedByDescending { it.bytes }

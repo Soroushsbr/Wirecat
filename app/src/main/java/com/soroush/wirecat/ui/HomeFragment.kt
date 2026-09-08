@@ -170,7 +170,7 @@ class HomeFragment : Fragment() {
                     adapter.submitList(emptyList())
                     return@collect
                 }
-                binding.textSessionTime.text = "Session: " + FormatUtils.formatDuration(snapshot.elapsedMillis)
+                binding.textSessionTime.text = getString(R.string.session_time_format, FormatUtils.formatDuration(snapshot.elapsedMillis))
                 binding.textTotalUsage.text = FormatUtils.formatBytes(snapshot.totalBytes)
                 binding.textSpeed.text = FormatUtils.formatSpeed(snapshot.bytesPerSecond)
                 binding.emptyState.visibility = if (snapshot.perApp.isEmpty()) View.VISIBLE else View.GONE
@@ -183,9 +183,9 @@ class HomeFragment : Fragment() {
         binding.statusDot.setBackgroundResource(
             if (running) R.drawable.bg_status_dot else R.drawable.bg_status_dot_idle
         )
-        val base = if (running) "Monitoring" else "Idle"
+        val base = getString(if (running) R.string.status_monitoring else R.string.status_idle)
         binding.textStatusLabel.text = if (running && MonitorCaptureVpnService.isCapturing.value) {
-            "$base \u2022 Capturing packets"
+            getString(R.string.status_with_capture, base)
         } else {
             base
         }

@@ -41,17 +41,19 @@ class HistoryAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
+        val context = holder.itemView.context
         val isTunnel = item.session.type == SessionType.TUNNEL
-        holder.type.text = if (isTunnel) "TUNNEL" else "MONITOR"
+        holder.type.text = context.getString(if (isTunnel) R.string.history_type_tunnel else R.string.history_type_monitor)
         holder.date.text = dateFormat.format(Date(item.session.startTimeMillis))
         val duration = item.session.endTimeMillis - item.session.startTimeMillis
         val totalLabel = if (isTunnel) {
-            "${item.session.totalBytes} packets blocked"
+            context.getString(R.string.history_packets_blocked, item.session.totalBytes)
         } else {
-            "Total: ${FormatUtils.formatBytes(item.session.totalBytes)}"
+            context.getString(R.string.history_total_bytes, FormatUtils.formatBytes(item.session.totalBytes))
         }
-        holder.summary.text = "$totalLabel \u2022 Duration: ${FormatUtils.formatDuration(duration)} \u2022 " +
-            "${item.packetCount} packets logged"
+        holder.summary.text = context.getString(
+            R.string.history_summary_full, totalLabel, FormatUtils.formatDuration(duration), item.packetCount
+        )
         holder.itemView.setOnClickListener { onClick(item) }
         holder.delete.setOnClickListener { onDelete(item) }
     }
