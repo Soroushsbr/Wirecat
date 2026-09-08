@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wirecat</string>
+
+    <string name="start_monitoring">شروع</string>
+    <string name="stop_monitoring">توقف</string>
+    <string name="total_usage">مجموع مصرف</string>
+    <string name="session_time">مدت جلسه</string>
+
+    <string name="nav_home">خانه</string>
+    <string name="nav_logs">گزارش‌ها</string>
+    <string name="nav_tunnel">تانل</string>
+    <string name="nav_settings">تنظیمات</string>
+
+    <string name="settings_title">تنظیمات</string>
+    <string name="settings_theme">تم</string>
+    <string name="settings_theme_dark">تیره</string>
+    <string name="settings_theme_light">روشن</string>
+    <string name="settings_language">زبان</string>
+    <string name="settings_privacy_policy">حریم خصوصی</string>
+    <string name="settings_donate">حمایت از توسعه‌دهنده</string>
+    <string name="settings_history">تاریخچه</string>
+    <string name="settings_capture_packets">ضبط بسته‌ها هنگام مانیتورینگ</string>
+    <string name="settings_capture_packets_desc">ترافیک شبکه را با جزئیات کامل ضبط می‌کند - هم ارسالی و هم دریافتی، برای هر برنامه - به‌جای فقط نمایش مجموع مصرف. نیاز به مجوز VPN دارد و ممکن است هنگام فعال بودن سرعت اتصال را کاهش دهد، به همین دلیل به‌طور پیش‌فرض خاموش است. این گزینه را پیش از زدن دکمه‌ی شروع در صفحه‌ی خانه روشن کنید.</string>
+    <string name="capture_notification_text">ضبط بسته‌ها در حال اجراست</string>
+    <string name="capture_conflict_tunnel">در حال حاضر تانل در حال مسدود کردن برنامه‌هاست. ابتدا تانل را خاموش کنید - اندروید در هر لحظه فقط اجازه‌ی یک اتصال VPN را می‌دهد.</string>
+    <string name="tunnel_conflict_capture">در حال حاضر ضبط بسته‌ها در صفحه‌ی خانه در حال اجراست. ابتدا مانیتورینگ را متوقف کنید - اندروید در هر لحظه فقط اجازه‌ی یک اتصال VPN را می‌دهد.</string>
+    <string name="splash_loading">در حال بارگذاری\u2026</string>
+    <string name="version_format">v%1$s</string>
+
+    <string name="log_title">گزارش</string>
+    <string name="log_empty">هنوز بسته‌ای ثبت نشده. تانل را روشن کنید (با «ضبط بسته‌ها» فعال در تنظیمات) تا ترافیک مسدودشده اینجا نمایش داده شود.</string>
+    <string name="log_no_matches">هیچ بسته‌ای با جستجوی شما مطابقت ندارد.</string>
+    <string name="log_search_hint">جستجو بر اساس برنامه، پروتکل یا آدرس</string>
+    <string name="log_direction_sent">ارسال‌شده</string>
+    <string name="log_direction_received">دریافت‌شده</string>
+    <string name="log_direction_blocked">مسدودشده</string>
+    <string name="log_direction_with_app">%1$s \u2022 %2$s</string>
+    <string name="log_field_source">مبدأ: %1$s</string>
+    <string name="log_field_destination">مقصد: %1$s</string>
+    <string name="log_field_protocol">پروتکل: %1$s</string>
+    <string name="log_field_ip_version">نسخه‌ی IP: %1$s</string>
+    <string name="log_field_direction">جهت: %1$s</string>
+    <string name="log_field_size">حجم: %1$s</string>
+    <string name="log_field_app">برنامه: %1$s</string>
+    <string name="log_field_time">زمان: %1$s</string>
+    <string name="unknown">نامشخص</string>
+    <string name="unknown_source_destination">مبدأ/مقصد نامشخص</string>
+    <string name="bytes_format">%1$d بایت</string>
+    <string name="direction_sent_detail">ارسال‌شده (دستگاه \u2190 مقصد)</string>
+    <string name="direction_received_detail">دریافت‌شده (مقصد \u2190 دستگاه)</string>
+    <string name="direction_blocked_detail">مسدودشده (هرگز از دستگاه خارج نشد)</string>
+
+    <string name="tunnel_title">تانل</string>
+    <string name="tunnel_subtitle">قطع دسترسی اینترنت برای برنامه‌های انتخاب‌شده</string>
+    <string name="tunnel_start">شروع تانل</string>
+    <string name="tunnel_stop">توقف تانل</string>
+    <string name="tunnel_vpn_notice">تانل از رابط VPN محلی اندروید برای مسدود کردن برنامه‌های انتخابی شما استفاده می‌کند. از آنجا که اندروید در هر لحظه فقط یک VPN فعال را اجازه می‌دهد، وقتی تانل روشن است سایر برنامه‌های VPN متوقف می‌شوند. برای استفاده از برنامه‌ی VPN دیگر، تانل را خاموش کنید.</string>
+    <string name="tunnel_search_hint">جستجوی برنامه‌ها</string>
+
+    <string name="permission_usage_access_title">نیاز به مجوز دسترسی به مصرف</string>
+    <string name="permission_usage_access_body">وایرکت برای خواندن میزان مصرف داده‌ی هر برنامه به مجوز Usage Access نیاز دارد. لطفاً آن را برای وایرکت در صفحه‌ی بعد فعال کنید.</string>
+    <string name="permission_notifications_title">اعلان‌ها</string>
+    <string name="permission_notifications_body">طبق الزام اندروید، وایرکت هنگام اجرای مانیتورینگ یک اعلان دائمی نمایش می‌دهد.</string>
+    <string name="grant_permission">اعطای مجوز</string>
+    <string name="not_now">الان نه</string>
+    <string name="no_network_message">پیش از شروع مانیتورینگ، به وای‌فای یا دیتای موبایل متصل شوید.</string>
+    <string name="status_monitoring">در حال مانیتورینگ</string>
+    <string name="status_idle">غیرفعال</string>
+    <string name="status_with_capture">%1$s \u2022 در حال ضبط بسته‌ها</string>
+    <string name="session_time_format">جلسه: %1$s</string>
+    <string name="monitor_notification_text">مانیتورینگ \u2022 %1$s</string>
+    <string name="monitor_channel_name">مانیتورینگ</string>
+    <string name="tunnel_channel_name">تانل</string>
+    <string name="capture_channel_name">ضبط بسته‌ها</string>
+    <string name="usage_percent_lt_one">&lt;1%</string>
+    <string name="usage_percent_format">%1$d%%</string>
+    <string name="usage_summary_format">%1$s \u2022 %2$s</string>
+
+    <string name="donate_url">https://sibmo.ir/soroushsbr</string>
+
+    <string name="history_title">تاریخچه</string>
+    <string name="history_empty">هنوز هیچ جلسه‌ای ذخیره نشده.</string>
+    <string name="history_delete_one">حذف جلسه</string>
+    <string name="history_delete_one_confirm">این جلسه‌ی ذخیره‌شده و گزارش‌های آن حذف شود؟ این عمل قابل بازگشت نیست.</string>
+    <string name="history_delete_all">حذف کل تاریخچه</string>
+    <string name="history_delete_all_confirm">همه‌ی جلسات ذخیره‌شده و گزارش‌های آن‌ها حذف شود؟ این عمل قابل بازگشت نیست.</string>
+    <string name="history_delete_confirm_yes">حذف</string>
+    <string name="history_tab_data">مصرف داده</string>
+    <string name="history_tab_logs">گزارش‌ها</string>
+    <string name="history_no_packets_monitor">برای این جلسه گزارش بسته‌ای ثبت نشده - مانیتورینگ فقط مصرف داده را دنبال می‌کند، نه بسته‌های جداگانه را. برای ثبت گزارش بسته‌ها از تانل به‌همراه «ضبط بسته‌ها» استفاده کنید.</string>
+    <string name="history_no_packets_tunnel">برای این جلسه هیچ بسته‌ای ثبت نشده - «ضبط بسته‌ها» هنگام اجرای آن در تنظیمات خاموش بوده است.</string>
+    <string name="history_type_tunnel">تانل</string>
+    <string name="history_type_monitor">مانیتور</string>
+    <string name="history_packets_blocked">%1$d بسته مسدود شد</string>
+    <string name="history_total_bytes">مجموع: %1$s</string>
+    <string name="history_summary_full">%1$s \u2022 مدت: %2$s \u2022 %3$d بسته ثبت شد</string>
+    <string name="history_summary_detail">%1$s \u2022 مدت: %2$s</string>
+
+    <string name="privacy_policy_title">حریم خصوصی</string>
+    <string name="privacy_policy_body">وایرکت کاملاً روی دستگاه شما اجرا می‌شود.\n\nمانیتورینگ مصرف داده: مصرف داده‌ی هر برنامه از رابط‌های داخلی اندروید برای دسترسی به آمار مصرف خوانده می‌شود و هرگز به جایی ارسال نمی‌شود.\n\nتانل و ضبط بسته‌ها: وقتی تانل را روشن می‌کنید یا «ضبط بسته‌ها هنگام مانیتورینگ» را فعال می‌کنید، وایرکت یک رابط VPN محلی می‌سازد تا صرفاً ترافیک روی دستگاه خودتان را ببیند و، در مورد تانل، مسدود کند - هیچ ترافیکی هرگز از طریق سروری خارجی مسیریابی نمی‌شود، و محتوای بسته‌ها خوانده یا ذخیره نمی‌شود، فقط اطلاعاتی مانند نوع پروتکل، حجم، زمان و اینکه از کدام برنامه بوده است.\n\nذخیره‌سازی: تاریخچه‌ی جلسات و گزارش بسته‌ها در یک پایگاه‌داده‌ی محلی داخل حافظه‌ی اختصاصی برنامه روی دستگاه شما ذخیره می‌شود. هیچ‌چیز با هیچ سروری همگام‌سازی یا پشتیبان‌گیری نمی‌شود، و می‌توانید هر بخش یا همه‌ی آن را در هر زمان از صفحه‌ی تاریخچه حذف کنید.\n\nحمایت مالی: لینک حمایت یک صفحه‌ی خارجی را در مرورگر شما باز می‌کند؛ وایرکت هیچ نقشی در آن ندارد و اطلاعاتی که آنجا وارد می‌کنید را نمی‌بیند.\n\nبه‌جز لینک حمایتی که خودتان انتخاب می‌کنید باز کنید، وایرکت هیچ اتصال شبکه‌ی دیگری برقرار نمی‌کند و هیچ اطلاعات شخصی‌ای از شما جمع‌آوری، منتقل یا فروخته نمی‌شود.</string>
+</resources>

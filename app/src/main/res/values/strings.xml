@@ -16,6 +16,9 @@
     <string name="settings_theme">Theme</string>
     <string name="settings_theme_dark">Dark</string>
     <string name="settings_theme_light">Light</string>
+    <string name="settings_language">Language</string>
+    <string name="language_english">English</string>
+    <string name="language_persian">فارسی</string>
     <string name="settings_privacy_policy">Privacy policy</string>
     <string name="settings_donate">Support the developer</string>
     <string name="settings_history">History</string>
@@ -31,6 +34,24 @@
     <string name="log_empty">No packets yet. Turn on Tunnel (with Capture packets on in Settings) to see blocked traffic here.</string>
     <string name="log_no_matches">No packets match your search.</string>
     <string name="log_search_hint">Search by app, protocol, or address</string>
+    <string name="log_direction_sent">Sent</string>
+    <string name="log_direction_received">Received</string>
+    <string name="log_direction_blocked">Blocked</string>
+    <string name="log_direction_with_app">%1$s \u2022 %2$s</string>
+    <string name="log_field_source">Source: %1$s</string>
+    <string name="log_field_destination">Destination: %1$s</string>
+    <string name="log_field_protocol">Protocol: %1$s</string>
+    <string name="log_field_ip_version">IP version: %1$s</string>
+    <string name="log_field_direction">Direction: %1$s</string>
+    <string name="log_field_size">Size: %1$s</string>
+    <string name="log_field_app">App: %1$s</string>
+    <string name="log_field_time">Time: %1$s</string>
+    <string name="unknown">Unknown</string>
+    <string name="unknown_source_destination">Unknown source/destination</string>
+    <string name="bytes_format">%1$d bytes</string>
+    <string name="direction_sent_detail">Sent (device \u2192 destination)</string>
+    <string name="direction_received_detail">Received (destination \u2192 device)</string>
+    <string name="direction_blocked_detail">Blocked (never left device)</string>
 
     <string name="tunnel_title">Tunnel</string>
     <string name="tunnel_subtitle">Block internet access for selected apps</string>
@@ -46,6 +67,17 @@
     <string name="grant_permission">Grant permission</string>
     <string name="not_now">Not now</string>
     <string name="no_network_message">Connect to Wi-Fi or mobile data before starting monitoring.</string>
+    <string name="status_monitoring">Monitoring</string>
+    <string name="status_idle">Idle</string>
+    <string name="status_with_capture">%1$s \u2022 Capturing packets</string>
+    <string name="session_time_format">Session: %1$s</string>
+    <string name="monitor_notification_text">Monitoring \u2022 %1$s</string>
+    <string name="monitor_channel_name">Monitoring</string>
+    <string name="tunnel_channel_name">Tunnel</string>
+    <string name="capture_channel_name">Packet capture</string>
+    <string name="usage_percent_lt_one">&lt;1%</string>
+    <string name="usage_percent_format">%1$d%%</string>
+    <string name="usage_summary_format">%1$s \u2022 %2$s</string>
 
     <string name="donate_url">https://sibmo.ir/soroushsbr</string>
 
@@ -60,6 +92,12 @@
     <string name="history_tab_logs">Logs</string>
     <string name="history_no_packets_monitor">No packet-level logs for this session - Monitoring tracks data usage, not individual packets. Use Tunnel with Capture packets on to record packet logs.</string>
     <string name="history_no_packets_tunnel">No packets were logged for this session - Capture packets was off in Settings while it ran.</string>
+    <string name="history_type_tunnel">TUNNEL</string>
+    <string name="history_type_monitor">MONITOR</string>
+    <string name="history_packets_blocked">%1$d packets blocked</string>
+    <string name="history_total_bytes">Total: %1$s</string>
+    <string name="history_summary_full">%1$s \u2022 Duration: %2$s \u2022 %3$d packets logged</string>
+    <string name="history_summary_detail">%1$s \u2022 Duration: %2$s</string>
 
     <string name="privacy_policy_title">Privacy policy</string>
     <string name="privacy_policy_body">Wirecat runs entirely on your device.\n\nData usage monitoring: app-by-app data usage is read from Android\'s built-in usage-access APIs and is never uploaded anywhere.\n\nTunnel and packet capture: when you turn on Tunnel or enable \"Capture packets while monitoring,\" Wirecat creates a local VPN interface purely to see and, for Tunnel, block traffic on your own device - no traffic is ever routed through an external server, and packet contents themselves are not read or stored, only metadata such as protocol, size, timestamp, and which app it came from.\n\nStorage: session history and packet logs are saved in a local database inside the app\'s private storage on your device. Nothing is synced or backed up to any server, and you can delete any or all of it at any time from the History screen.\n\nDonations: the donate link opens an external page in your browser; Wirecat has no part in and does not see any information you provide there.\n\nOutside of the donation link you choose to open, Wirecat makes no other network connections and does not collect, transmit, or sell your personal data.</string>
