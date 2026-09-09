@@ -39,7 +39,7 @@
     <string name="log_field_source">مبدأ: %1$s</string>
     <string name="log_field_destination">مقصد: %1$s</string>
     <string name="log_field_protocol">پروتکل: %1$s</string>
-    <string name="log_field_ip_version">نسخه‌ی IP: %1$s</string>
+    <string name="log_field_ip_version">نسخه‌ی آی‌پی: %1$s</string>
     <string name="log_field_direction">جهت: %1$s</string>
     <string name="log_field_size">حجم: %1$s</string>
     <string name="log_field_app">برنامه: %1$s</string>

@@ -51,6 +51,7 @@ class WirecatDbHelper private constructor(context: Context) :
                 $COL_PACKET_SRC_PORT INTEGER,
                 $COL_PACKET_DST_PORT INTEGER,
                 $COL_PACKET_SIZE INTEGER,
+                $COL_PACKET_IP_VERSION INTEGER,
                 FOREIGN KEY($COL_PACKET_SESSION_FK) REFERENCES $TABLE_SESSIONS($COL_SESSION_ID) ON DELETE CASCADE
             )
             """.trimIndent()
@@ -101,6 +102,7 @@ class WirecatDbHelper private constructor(context: Context) :
                     put(COL_PACKET_SRC_PORT, packet.sourcePort)
                     put(COL_PACKET_DST_PORT, packet.destPort)
                     put(COL_PACKET_SIZE, packet.sizeBytes)
+                    put(COL_PACKET_IP_VERSION, packet.ipVersion)
                 }
                 db.insertOrThrow(TABLE_PACKETS, null, packetValues)
             }
@@ -167,7 +169,7 @@ class WirecatDbHelper private constructor(context: Context) :
         db.rawQuery(
             "SELECT $COL_PACKET_ID, $COL_PACKET_SESSION_FK, $COL_PACKET_TYPE, $COL_PACKET_DIRECTION, " +
                 "$COL_PACKET_TIME, $COL_PACKET_APP_LABEL, $COL_PACKET_SRC_ADDR, $COL_PACKET_DST_ADDR, " +
-                "$COL_PACKET_SRC_PORT, $COL_PACKET_DST_PORT, $COL_PACKET_SIZE FROM $TABLE_PACKETS " +
+                "$COL_PACKET_SRC_PORT, $COL_PACKET_DST_PORT, $COL_PACKET_SIZE, $COL_PACKET_IP_VERSION FROM $TABLE_PACKETS " +
                 "WHERE $COL_PACKET_SESSION_FK = ? ORDER BY $COL_PACKET_TIME DESC",
             arrayOf(sessionId.toString())
         ).use { cursor ->
@@ -184,7 +186,8 @@ class WirecatDbHelper private constructor(context: Context) :
                         destAddress = if (cursor.isNull(7)) null else cursor.getString(7),
                         sourcePort = if (cursor.isNull(8)) null else cursor.getInt(8),
                         destPort = if (cursor.isNull(9)) null else cursor.getInt(9),
-                        sizeBytes = if (cursor.isNull(10)) null else cursor.getInt(10)
+                        sizeBytes = if (cursor.isNull(10)) null else cursor.getInt(10),
+                        ipVersion = if (cursor.isNull(11)) null else cursor.getInt(11)
                     )
                 )
             }
@@ -237,7 +240,7 @@ class WirecatDbHelper private constructor(context: Context) :
 
     companion object {
         private const val DB_NAME = "wirecat.db"
-        private const val DB_VERSION = 3
+        private const val DB_VERSION = 4 // bumped: added ip_version column to packets
 
         private const val TABLE_SESSIONS = "sessions"
         private const val COL_SESSION_ID = "id"
@@ -265,6 +268,7 @@ class WirecatDbHelper private constructor(context: Context) :
         private const val COL_PACKET_SRC_PORT = "src_port"
         private const val COL_PACKET_DST_PORT = "dst_port"
         private const val COL_PACKET_SIZE = "size_bytes"
+        private const val COL_PACKET_IP_VERSION = "ip_version"
 
         @Volatile private var INSTANCE: WirecatDbHelper? = null
 
