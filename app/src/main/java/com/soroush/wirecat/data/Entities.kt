@@ -29,7 +29,8 @@ data class PacketEntity(
     val destAddress: String?,
     val sourcePort: Int?,
     val destPort: Int?,
-    val sizeBytes: Int?
+    val sizeBytes: Int?,
+    val ipVersion: Int?
 ) {
     fun toLogEntry(): PacketLogEntry = PacketLogEntry(
         type = type,
@@ -41,6 +42,7 @@ data class PacketEntity(
         sourcePort = sourcePort,
         destPort = destPort,
         sizeBytes = sizeBytes,
+        ipVersion = ipVersion,
         id = id
     )
 }

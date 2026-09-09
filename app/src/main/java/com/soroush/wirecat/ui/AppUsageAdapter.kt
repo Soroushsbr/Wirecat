@@ -62,10 +62,12 @@ class AppUsageAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.name.text = item.appLabel
+        val context = holder.itemView.context
         val percent = ((item.bytes.toDouble() / totalBytes.toDouble()) * 100).let {
-            if (it < 1.0 && item.bytes > 0) "<1%" else "${it.toInt()}%"
+            if (it < 1.0 && item.bytes > 0) context.getString(R.string.usage_percent_lt_one)
+            else context.getString(R.string.usage_percent_format, it.toInt())
         }
-        holder.usage.text = "${FormatUtils.formatBytes(item.bytes)} \u2022 $percent"
+        holder.usage.text = context.getString(R.string.usage_summary_format, FormatUtils.formatBytes(item.bytes), percent)
         try {
             holder.icon.setImageDrawable(packageManager.getApplicationIcon(item.packageName))
         } catch (e: PackageManager.NameNotFoundException) {

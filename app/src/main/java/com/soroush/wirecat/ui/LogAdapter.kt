@@ -68,34 +68,65 @@ class LogAdapter : RecyclerView.Adapter<LogAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val entry = items[position]
+        val context = holder.itemView.context
         holder.type.text = entry.type.name
 
         val directionLabel = when (entry.direction) {
-            PacketDirection.SENT -> "Sent"
-            PacketDirection.RECEIVED -> "Received"
-            PacketDirection.BLOCKED -> "Blocked"
+            PacketDirection.SENT -> context.getString(R.string.log_direction_sent)
+            PacketDirection.RECEIVED -> context.getString(R.string.log_direction_received)
+            PacketDirection.BLOCKED -> context.getString(R.string.log_direction_blocked)
         }
-        holder.direction.text = if (entry.appLabel != null) "$directionLabel \u2022 ${entry.appLabel}" else directionLabel
-        holder.route.text = entry.formattedRoute()
+        holder.direction.text = if (entry.appLabel != null) {
+            context.getString(R.string.log_direction_with_app, directionLabel, entry.appLabel)
+        } else {
+            directionLabel
+        }
+        holder.route.text = formattedRoute(context, entry)
         holder.time.text = entry.formattedTime()
 
         val expanded = expandedIds.contains(entry.id)
         holder.detailsSection.visibility = if (expanded) View.VISIBLE else View.GONE
         holder.chevron.rotation = if (expanded) 270f else 90f
 
-        holder.source.text = "Source: ${entry.formattedSource()}"
-        holder.dest.text = "Destination: ${entry.formattedDest()}"
-        holder.protocol.text = "Protocol: ${entry.type.name}"
-        holder.ipVersion.text = "IP version: ${entry.formattedIpVersion().ifBlank { "Unknown" }}"
-        holder.directionDetail.text = "Direction: ${entry.formattedDirection()}"
-        holder.size.text = "Size: ${entry.formattedSize()}"
-        holder.app.text = "App: ${entry.appLabel ?: "Unknown"}"
-        holder.fullTime.text = "Time: ${entry.formattedFullTime()}"
+        val unknown = context.getString(R.string.unknown)
+        holder.source.text = context.getString(R.string.log_field_source, formattedEndpoint(entry.sourceAddress, entry.sourcePort, unknown))
+        holder.dest.text = context.getString(R.string.log_field_destination, formattedEndpoint(entry.destAddress, entry.destPort, unknown))
+        holder.protocol.text = context.getString(R.string.log_field_protocol, entry.type.name)
+        holder.ipVersion.text = context.getString(R.string.log_field_ip_version, formattedIpVersion(entry.ipVersion).ifBlank { unknown })
+        holder.directionDetail.text = context.getString(R.string.log_field_direction, formattedDirectionDetail(context, entry.direction))
+        holder.size.text = context.getString(R.string.log_field_size, if (entry.sizeBytes != null) context.getString(R.string.bytes_format, entry.sizeBytes) else unknown)
+        holder.app.text = context.getString(R.string.log_field_app, entry.appLabel ?: unknown)
+        holder.fullTime.text = context.getString(R.string.log_field_time, entry.formattedFullTime())
 
         holder.headerRow.setOnClickListener {
             if (expandedIds.contains(entry.id)) expandedIds.remove(entry.id) else expandedIds.add(entry.id)
             notifyItemChanged(position)
         }
+    }
+
+    private fun formattedEndpoint(address: String?, port: Int?, unknown: String): String {
+        if (address == null) return unknown
+        return if (port != null) "$address:$port" else address
+    }
+
+    private fun formattedRoute(context: android.content.Context, entry: PacketLogEntry): String {
+        val src = entry.sourceAddress ?: return context.getString(R.string.unknown_source_destination)
+        val dst = entry.destAddress ?: return src
+        val srcLabel = if (entry.sourcePort != null) "$src:${entry.sourcePort}" else src
+        val dstLabel = if (entry.destPort != null) "$dst:${entry.destPort}" else dst
+        return "$srcLabel \u2192 $dstLabel"
+    }
+
+    private fun formattedIpVersion(ipVersion: Int?): String = when (ipVersion) {
+        4 -> "IPv4"
+        6 -> "IPv6"
+        else -> ""
+    }
+
+    private fun formattedDirectionDetail(context: android.content.Context, direction: PacketDirection): String = when (direction) {
+        PacketDirection.SENT -> context.getString(R.string.direction_sent_detail)
+        PacketDirection.RECEIVED -> context.getString(R.string.direction_received_detail)
+        PacketDirection.BLOCKED -> context.getString(R.string.direction_blocked_detail)
     }
 
     override fun getItemCount(): Int = items.size

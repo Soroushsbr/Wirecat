@@ -141,7 +141,7 @@ class MonitorService : Service() {
         )
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(getString(R.string.app_name))
-            .setContentText("Monitoring \u2022 ${FormatUtils.formatBytes(totalBytes)}")
+            .setContentText(getString(R.string.monitor_notification_text, FormatUtils.formatBytes(totalBytes)))
             .setSmallIcon(android.R.drawable.stat_sys_download)
             .setOngoing(true)
             .setContentIntent(openIntent)
@@ -159,7 +159,7 @@ class MonitorService : Service() {
         val nm = getSystemService(NotificationManager::class.java)
         if (nm.getNotificationChannel(CHANNEL_ID) == null) {
             nm.createNotificationChannel(
-                NotificationChannel(CHANNEL_ID, "Monitoring", NotificationManager.IMPORTANCE_LOW)
+                NotificationChannel(CHANNEL_ID, getString(R.string.monitor_channel_name), NotificationManager.IMPORTANCE_LOW)
             )
         }
     }
