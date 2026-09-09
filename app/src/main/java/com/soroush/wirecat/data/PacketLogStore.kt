@@ -28,36 +28,6 @@ data class PacketLogEntry(
 
     fun formattedFullTime(): String =
         SimpleDateFormat("HH:mm:ss.SSS", Locale.US).format(Date(timestampMillis))
-
-    fun formattedRoute(): String {
-        val src = sourceAddress ?: return "Unknown source/destination"
-        val dst = destAddress ?: return src
-        val srcLabel = if (sourcePort != null) "$src:$sourcePort" else src
-        val dstLabel = if (destPort != null) "$dst:$destPort" else dst
-        return "$srcLabel \u2192 $dstLabel"
-    }
-
-    fun formattedSource(): String =
-        if (sourceAddress == null) "Unknown"
-        else if (sourcePort != null) "$sourceAddress:$sourcePort" else sourceAddress
-
-    fun formattedDest(): String =
-        if (destAddress == null) "Unknown"
-        else if (destPort != null) "$destAddress:$destPort" else destAddress
-
-    fun formattedDirection(): String = when (direction) {
-        PacketDirection.SENT -> "Sent (device \u2192 destination)"
-        PacketDirection.RECEIVED -> "Received (destination \u2192 device)"
-        PacketDirection.BLOCKED -> "Blocked (never left device)"
-    }
-
-    fun formattedSize(): String = if (sizeBytes != null) "$sizeBytes bytes" else "Unknown"
-
-    fun formattedIpVersion(): String = when (ipVersion) {
-        4 -> "IPv4"
-        6 -> "IPv6"
-        else -> ""
-    }
 }
 
 object PacketLogStore {

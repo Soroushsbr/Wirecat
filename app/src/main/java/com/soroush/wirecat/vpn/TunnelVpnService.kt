@@ -307,7 +307,7 @@ class TunnelVpnService : VpnService() {
             val nm = getSystemService(NotificationManager::class.java)
             if (nm.getNotificationChannel(CHANNEL_ID) == null) {
                 nm.createNotificationChannel(
-                    NotificationChannel(CHANNEL_ID, "Tunnel", NotificationManager.IMPORTANCE_LOW)
+                    NotificationChannel(CHANNEL_ID, getString(R.string.tunnel_channel_name), NotificationManager.IMPORTANCE_LOW)
                 )
             }
         }
